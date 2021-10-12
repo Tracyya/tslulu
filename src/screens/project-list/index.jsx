@@ -6,7 +6,7 @@ import List from './list'
 
 import SearchPanel from './searchPanel';
 
-import {} from 'utiles'
+import { cleanObject } from 'utiles'
 
 const apiUrl = process.env.REACT_APP_API_URL;
 const ProjectListScreen = () => {
@@ -17,7 +17,7 @@ const ProjectListScreen = () => {
     })
     const [ list, setList ] = useState([])
     useEffect(() => {
-       fetch(`${apiUrl}/projects`).then(async response => {
+       fetch(`${apiUrl}/projects?${qs.stringify(cleanObject(param))}`).then(async response => {
            if(response.ok){
               setList(await response.json()) 
            }
