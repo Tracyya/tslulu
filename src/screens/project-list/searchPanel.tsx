@@ -1,7 +1,22 @@
 
 import React,{ useState, useEffect } from 'react'
-const SearchPanel = (props) => {
-    let { users , param , setParam } = props
+ export interface User{
+    id:string;
+    name:string;
+    email:string;
+    title:string;
+    organization:string
+}
+interface SearchPanelProps {
+    users:User[],
+    param:{
+        name:string;
+        personId:string;
+    }
+    setParam:(param:SearchPanelProps['param'])=>void;
+}
+export const  SearchPanel = ({users,param,setParam}:SearchPanelProps) => {
+    
    
     return ( 
         <div>
@@ -24,4 +39,3 @@ const SearchPanel = (props) => {
      );
 }
  
-export default SearchPanel;
