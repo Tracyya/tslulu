@@ -6,7 +6,7 @@ const SearchPanel = (props) => {
     return ( 
         <div>
             <form action="">
-                  <input type="text" value={param.name}  onChange={(e)=>setParam({
+                  <input type="text"  onChange={(e)=>setParam({
                     ...param,
                     name:e.target.value
                   })}/>
