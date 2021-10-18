@@ -31,7 +31,7 @@ export const AuthProvide =({children}:{children:ReactNode})=>{
   //point free  类似于高中数学中的消参
   const login =(form:AuthForm)=>auth.login(form).then(setUser)
   const register =(form:AuthForm)=>auth.register(form).then(setUser)
-  const logout =()=>auth.logout().then(user=>setUser(null))
+  const logout =()=>auth.logout().then(()=>setUser(null))
 
   useMount(()=>{
     bootstrapUser().then(setUser)

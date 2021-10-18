@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
 import App from './App';
 import {AppProviders} from "context"
 import reportWebVitals from './reportWebVitals';
 import {loadDevTools} from 'jira-dev-tool'
+//务必在jira-dev-tool 后面引入
+import 'antd/dist/antd.less'
  
 loadDevTools(()=>ReactDOM.render(
     <React.StrictMode>
